@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="new-suggestion">
+        <p>Your suggestion</p>
+        <form action="/new" method="POST">
+        <div class="form-control">
+            <div class="textarea-container">
+                <textarea name="suggestion"></textarea>
+                <button type="submit">Submit</button>
+            </div>
+            <div class="textarea-spacer"></div>
+        </div>
+        </form>
+    </div>
+
+    <div class="suggestions">
+        {% for suggestion in suggestions %}
+            <div class="suggestion">
+                <p class="suggestion-title">{{ suggestion }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
